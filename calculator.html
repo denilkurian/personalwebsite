@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+
+<style>
+/* button styling*/
+.button {
+  border-radius:30%;
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+/*clear button*/
+.clear {
+  border-radius:30%;
+  width:190px;
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+
+/* styling operators*/
+.operator {
+  border-radius:30%;
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+.screen{
+width:90%;
+height:100px;
+border: 3px solid green;
+
+}
+body {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+    </style>
+</head>
+<body>
+<div>
+          <center><input type='text' id='result' class ='screen' style="text-align: right;">
+    <br>
+          <br>
+    <input type='button' value = 'C' onclick="clearScreen()" class="clear"/>
+    <input type="button" value="/" class="operator" onClick="display('/')"></input>
+    <br>
+       <input type="button" value="1" class="button" onClick="display('1')"></input>
+    <input type="button" value="2" class="button" onClick="display('2')"></input>
+    <input type="button" value="3" class="button" onClick="display('3')"></input>
+    <input type="button" value="*" class="operator" onClick="display('*')"></input>
+    <br>
+    <input type="button" value="4" class="button" onClick="display('4')"></input>
+    <input type="button" value="5" class="button" onClick="display('5')"></input>
+    <input type="button" value="6" class="button" onClick="display('6')"></input>
+    <input type="button" value="/" class="operator" onClick="display('/')"></input>
+    <br>
+    <input type="button" value="7" class="button" onClick="display('7')"></input>
+    <input type="button" value="8" class="button " onClick="display('8')"></input>
+    <input type="button" value="9" class="button" onClick="display('9')"></input>
+    <input type="button" value="-" class="operator" onClick="display('-')"></input>
+    <br>
+    <input type="button" value="." class="button" onClick="display('.')"></input>
+    <input type="button" value="0" class="button" onClick="display('0')"></input>
+    <input type="button" value= ":       =       :" class="button equal-sign" onClick="solve()"></input>
+    </div>
+</center>
+
+
+<script>
+
+function display(val){
+       document.getElementById('result').value += val
+
+    return val
+    }
+
+    function solve(){
+     let x = document.getElementById('result').value
+
+    let y = eval(x);
+
+    document.getElementById('result').value = y
+
+    return y
+    }
+
+function clearScreen(){
+      document.getElementById('result').value = ''
+      }
+</script>
+</body>
+</html>
+
+
